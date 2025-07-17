@@ -1,0 +1,45 @@
+{
+  "name": "synapse-select-ai-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.ts",
+    "build": "echo \"No build step defined\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "format": "npm run prettier && npm run lint:fix",
+    "format:check": "npm run prettier:check && npm run lint",
+    "clean": "rm -rf node_modules && rm package-lock.json",
+    "clean:all": "npm run clean && npm cache clean --force",
+    "test:unit": "echo \"No unit tests defined\"",
+    "test:integration": "echo \"No integration tests defined\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbg-synapse-team/synapse-select-ai-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbg-synapse-team/synapse-select-ai-backend/issues"
+  },
+  "homepage": "https://github.com/lbg-synapse-team/synapse-select-ai-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
