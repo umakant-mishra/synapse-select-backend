@@ -33,12 +33,15 @@ docker run -p 5000:5000 --env-file .env synapse-select-ai-backend
 
 ## Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project root.  
+To allow both local development and production, include all required domains:
 
 ```
 PORT=5000
-CORS_ORIGIN=https://yourdomain.com
+CORS_ORIGIN=http://localhost:5173,http://localhost:3000,https://yourdomain.com
 ```
+
+You can add more domains as needed, separated by commas.
 
 ## API Endpoints
 
