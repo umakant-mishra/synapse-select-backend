@@ -1,0 +1,9 @@
+[
+  {
+    "email": "user1@gmail.com",
+    "score": 5,
+    "feedback": "Candidate demonstrates very limited knowledge of basic JavaScript concepts and Node.js. Their answers are either 'not sure' or nonsensical, and the code attempt is minimal and incorrect. Significant improvement is needed in fundamental programming skills.",
+    "status": "fail",
+    "timestamp": "2025-07-22T12:46:24.454Z"
+  }
+]
