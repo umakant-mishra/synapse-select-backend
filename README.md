@@ -8,9 +8,89 @@ A simple Express backend for Synapse Select AI.
 
 - Node.js (v18+ recommended)
 - npm
+- Docker (optional, for containerization)
 
 ### Installation
 
 ```sh
 npm install
 ```
+
+## Running the Server
+
+### Development
+
+```sh
+npm start
+```
+
+### Production (with Docker)
+
+```sh
+docker build -t synapse-select-ai-backend .
+docker run -p 5000:5000 --env-file .env synapse-select-ai-backend
+```
+
+## Environment Variables
+
+Create a `.env` file in the project root:
+
+```
+PORT=5000
+CORS_ORIGIN=https://yourdomain.com
+```
+
+## API Endpoints
+
+### Save Results
+
+- **POST** `/api/save-results`
+- **Body:**  
+  ```json
+  {
+    "email": "user@example.com",
+    "name": "User Name",
+    "score": 85,
+    "feedback": "Great job!",
+    "status": "approved"
+  }
+  ```
+- **Response:**  
+  ```json
+  { "message": "Evaluation saved successfully." }
+  ```
+
+### Retrieve Results
+
+- **GET** `/api/retrieve-results`
+- **Response:**  
+  ```json
+  [
+    {
+      "email": "user@example.com",
+      "status": "approved",
+      "feedback": "Great job!",
+      "score": 85
+    }
+  ]
+  ```
+
+## Project Structure
+
+```
+.
+├── index.js
+├── routes/
+│   ├── save-results.js
+│   └── retrieve-results.js
+├── src/
+│   └── helper.js
+├── data.json
+├── package.json
+├── Dockerfile
+└── README.md
+```
+
+## License
+
+ISC
