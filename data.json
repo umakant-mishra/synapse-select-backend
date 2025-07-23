@@ -5,5 +5,26 @@
     "feedback": "Candidate demonstrates very limited knowledge of basic JavaScript concepts and Node.js. Their answers are either 'not sure' or nonsensical, and the code attempt is minimal and incorrect. Significant improvement is needed in fundamental programming skills.",
     "status": "fail",
     "timestamp": "2025-07-22T12:46:24.454Z"
+  },
+  {
+    "email": "",
+    "score": 40,
+    "feedback": "The candidate demonstrates basic coding ability with the correct implementation of string reversal. However, they lack knowledge in Express.js rate limiting and the typeof operator. Overall, the responses are incomplete and suggest a limited understanding of fundamental concepts.",
+    "status": "fail",
+    "timestamp": "2025-07-23T04:40:30.646Z"
+  },
+  {
+    "email": "",
+    "score": 75,
+    "feedback": "The candidate demonstrates a basic understanding of Node.js, closures, and JSX, although the explanations are somewhat informal and contain grammatical errors. The code for reversing a string is correct and efficient. Overall, the candidate shows potential but needs to improve their clarity and precision in technical explanations.",
+    "status": "pass",
+    "timestamp": "2025-07-23T05:14:08.962Z"
+  },
+  {
+    "email": "user1@gmail.com",
+    "score": 65,
+    "feedback": "The candidate demonstrates a basic understanding of React components, Node.js's `require` function, and JavaScript data types. However, the explanations are vague and contain grammatical errors. The code provided for reversing a string is correct. Overall, the answers show potential but lack depth and clarity.",
+    "status": "fail",
+    "timestamp": "2025-07-23T05:40:16.781Z"
   }
 ]
