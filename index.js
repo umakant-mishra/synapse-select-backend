@@ -10,10 +10,19 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 // middlewares
 app.use(cors({
-  origin: process.env.CORS_ORIGIN?.split(',') || ['http://localhost:5173', 'http://localhost:3000'],
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // Allow non-browser tools like curl
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`❌ Not allowed by CORS: ${origin}`));
+    }
+  },
   methods: ['POST', 'GET', 'OPTIONS'],
   credentials: true,
 }));
+
 app.use(bodyParser.json());
 
 // routes
