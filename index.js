@@ -8,18 +8,10 @@ import 'dotenv/config';
 const app = express();
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;
 
-// middlewares
+// Enable CORS for specific frontend origin
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true); // Allow non-browser tools like curl
-
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error(`❌ Not allowed by CORS: ${origin}`));
-    }
-  },
-  methods: ['POST', 'GET', 'OPTIONS'],
+  origin: 'https://synapse-select-ai-804971272594.europe-west1.run.app', // frontend URL
+  methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
 }));
 
