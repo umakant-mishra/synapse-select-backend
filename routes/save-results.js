@@ -6,9 +6,9 @@ const router = express.Router();
 router.post('/', (req, res) => {
   const { email, name, score, feedback, status } = req.body;
 
-  // if (!email || !name || score == null || !feedback || !status) {
-  //   return res.status(400).json({ error: 'Missing required fields.' });
-  // }
+  if (!email || !name || score == null || !feedback || !status) {
+    return res.status(400).json({ error: 'Missing required fields.' });
+  }
 
   const data = {
     email,

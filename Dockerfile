@@ -16,7 +16,7 @@ COPY . .
 # Expose port (default 5000, can be overridden by env)
 EXPOSE 5000
 
-# Set environment variables (can be overridden at runtime)
+# Set environment variables
 ENV NODE_ENV=production
 
 # Start the server
