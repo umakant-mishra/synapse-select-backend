@@ -9,8 +9,20 @@ const app = express();
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 // Enable CORS for specific frontend origin
+
+const allowedOrigins = [
+  'https://synapse-select-ai-804971272594.europe-west1.run.app',
+  'https://synapse-frontend-804971272594.europe-west1.run.app',
+];
+
 app.use(cors({
-  origin: 'https://synapse-select-ai-804971272594.europe-west1.run.app', // frontend URL
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
 }));
